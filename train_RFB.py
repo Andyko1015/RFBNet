@@ -132,7 +132,9 @@ else:
     net.load_state_dict(new_state_dict)
 
 if args.ngpu > 1:
-    net = torch.nn.DataParallel(net, device_ids=list(range(args.ngpu)))
+    #device_ids=list(range(args.ngpu))
+    device_ids= [4, 7]
+    net = torch.nn.DataParallel(net, device_ids= device_ids)
 
 if args.cuda:
     net.cuda()
