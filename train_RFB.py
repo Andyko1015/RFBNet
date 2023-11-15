@@ -133,7 +133,7 @@ else:
 
 if args.ngpu > 1:
     #device_ids=list(range(args.ngpu))
-    device_ids= [4, 7]
+    device_ids= [4, 5, 6, 7]
     net = torch.nn.DataParallel(net, device_ids= device_ids)
 
 if args.cuda:
